@@ -1,0 +1,107 @@
+@import '../../assets/scss/base.scss';
+@import '../../assets/scss/helpers.scss';
+
+.header{
+	position: fixed;
+	width: 100%;
+	padding: 15px 30px;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	z-index: 100;
+	flex-wrap: wrap;
+	background: rgba(0,0,0,0.6);
+
+	&__info{
+		position: relative;
+		width: 100%;
+		display: flex;
+		justify-content: space-between;
+		border-bottom: 1px solid white;
+		padding: 10px 0;
+		p,a{
+			color: white;
+		}
+		a{
+			
+		}
+		@include media(small){
+			display: none !important;
+		}
+	}
+
+	&__logo{
+		position: relative;
+		a{
+			display: block;
+			img{
+				max-width: 200px;
+			}
+		}
+		@include media(small){
+		  width: 50%;
+		}
+	}
+
+	&__navigation{
+		position: relative;
+
+		@include media(small){
+		  display: none !important;
+		}
+		a{
+			margin: 0 15px;
+			text-decoration: none !important;
+			border-bottom: 2px solid transparent;
+			color: white;
+			cursor: pointer;
+			&:hover{
+				@include transition(.3s);
+				border-bottom: 2px solid $color-primary;
+			}
+		}
+		.activeRoute{
+			border-bottom: 2px solid $color-primary;
+		}
+	}
+
+	&__search{
+		position: relative;
+		@include media(small){
+			display: none !important;
+		}
+		form{
+			position: relative;
+			display: flex;
+			input{
+				background: transparent;
+				border: 2px solid white;
+				color: white;
+				padding: 3px 25px;
+			}
+			input::placeholder{
+				color: white;
+			}
+			input:focus{
+				outline: none;
+			}
+		}
+	}
+
+	&__menu{
+		position: relative;
+		width: 50%;
+		justify-content: flex-end;
+		display: none;
+		
+		button{
+			background: none;
+			border: none;
+		}
+
+		@include media(small){
+		  display: flex;
+		}
+	}
+		
+}

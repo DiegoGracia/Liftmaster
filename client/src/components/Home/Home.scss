@@ -1,0 +1,15 @@
+.home{
+    position: relative;
+
+    &__main{
+        position: relative;
+        img{
+            max-width: 100%;
+            object-fit: contain;
+        }
+    }
+
+    &__marca{
+        
+    }
+}
